@@ -5,7 +5,7 @@
 }
 
 .auth-image-pane {
-  flex: 1;
+  flex: 3; /* Takes up 3/4 (75%) of the screen */
   position: relative;
   background-image: url('../assets/bg.png');
   background-size: cover;
@@ -54,12 +54,13 @@
 }
 
 .auth-form-pane {
-  flex: 1;
+  flex: 1; /* Takes up 1/4 (25%) of the screen */
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 2rem;
   max-width: 600px;
+  min-width: 350px; /* Minimum width so the form isn't crushed on smaller laptops */
   margin: 0 auto;
 }
 

@@ -16,7 +16,17 @@ const RegistrationLayout = () => {
   } else if (location.pathname.includes('step-3')) {
     currentStep = 3;
     stepName = "Terms & Conditions";
+  } else if (location.pathname.includes('step-4')) {
+    currentStep = 4;
+    stepName = "Email Verification";
+  } else if (location.pathname.includes('step-5')) {
+    currentStep = 5;
+    stepName = "Create Password";
   }
+
+  const isPostRegistration = location.pathname.includes('under-review') || 
+                             location.pathname.includes('activate-membership') || 
+                             location.pathname.includes('payment-success');
 
   const progressPercentage = (currentStep / 5) * 100;
 
@@ -31,16 +41,18 @@ const RegistrationLayout = () => {
 
       <main className="reg-content">
         <div className="reg-container">
-          <div className="reg-progress-section">
-            <h2 className="reg-step-title">Step {currentStep} of 5</h2>
-            <div className="progress-bar-container">
-              <div 
-                className="progress-bar-fill" 
-                style={{ width: `${progressPercentage}%` }}
-              ></div>
+          {!isPostRegistration && (
+            <div className="reg-progress-section">
+              <h2 className="reg-step-title">Step {currentStep} of 5</h2>
+              <div className="progress-bar-container">
+                <div 
+                  className="progress-bar-fill" 
+                  style={{ width: `${progressPercentage}%` }}
+                ></div>
+              </div>
+              <p className="reg-step-subtitle">{stepName}</p>
             </div>
-            <p className="reg-step-subtitle">{stepName}</p>
-          </div>
+          )}
 
           <div className="reg-card">
             <Outlet />

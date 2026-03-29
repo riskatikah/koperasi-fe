@@ -1,0 +1,173 @@
+.mp-container {
+  padding: 0 40px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.mp-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1E293B;
+  margin-bottom: 24px;
+}
+
+.mp-card {
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid #E2E8F0;
+  padding: 32px;
+}
+
+.mp-user-info {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.mp-user-avatar {
+  width: 48px;
+  height: 48px;
+  background: #3B82F6;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mp-user-select-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.mp-user-select {
+  background: #E2E8F0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  cursor: pointer;
+}
+
+.mp-user-meta {
+  font-size: 11px;
+  color: #64748B;
+  line-height: 1.6;
+}
+
+.mp-user-details {
+  font-size: 13px;
+  color: #64748B;
+  margin-left: 24px;
+  line-height: 1.6;
+}
+
+.mp-section {
+  margin-bottom: 32px;
+}
+
+.mp-section-title {
+  font-size: 15px;
+  font-weight: 700;
+  font-style: italic;
+  color: #1E293B;
+  margin-bottom: 16px;
+}
+
+.mp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.mp-out-item {
+  margin-bottom: 20px;
+}
+
+.mp-out-item label {
+  display: block;
+  font-size: 12px;
+  color: #64748B;
+  margin-bottom: 4px;
+}
+
+.mp-amount {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1E293B;
+}
+
+.mp-saving-card {
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 24px;
+}
+
+.mp-saving-card label {
+  display: block;
+  font-size: 12px;
+  color: #64748B;
+  margin-bottom: 4px;
+}
+
+.mp-saving-card h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 800;
+  color: #333;
+}
+
+.mp-saving-card h4 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 800;
+  color: #333;
+}
+
+.mp-payment-inputs {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.mp-input-wrap {
+  flex: 1;
+}
+
+.mp-input-wrap select,
+.mp-input-wrap input {
+  width: 100%;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #475569;
+  background: #E2E8F0;
+  font-size: 14px;
+  color: #64748B;
+  font-weight: 600;
+  font-style: italic;
+  outline: none;
+}
+
+.mp-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.mp-btn {
+  background: #94A3B8;
+  color: #fff;
+  border: none;
+  padding: 10px 48px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.mp-btn:hover {
+  opacity: 0.9;
+}

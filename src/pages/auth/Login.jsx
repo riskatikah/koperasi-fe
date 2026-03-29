@@ -9,8 +9,8 @@ const Login = () => {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    // Navigate to registration as a demo for now
-    navigate('/register');
+    // Navigate to dashboard 
+    navigate('/dashboard');
   };
 
   return (
@@ -25,12 +25,12 @@ const Login = () => {
           <label className="form-label" htmlFor="email">Email</label>
           <div className="input-container">
             <User className="input-icon" size={20} />
-            <input 
-              type="email" 
-              id="email" 
-              className="form-input" 
-              placeholder="Email" 
-              required 
+            <input
+              type="email"
+              id="email"
+              className="form-input"
+              placeholder="Email"
+              required
             />
           </div>
         </div>
@@ -39,16 +39,16 @@ const Login = () => {
           <label className="form-label" htmlFor="password">Password</label>
           <div className="input-container">
             <Lock className="input-icon" size={20} />
-            <input 
-              type={showPassword ? 'text' : 'password'} 
-              id="password" 
-              className="form-input" 
-              placeholder="Password" 
-              required 
+            <input
+              type={showPassword ? 'text' : 'password'}
+              id="password"
+              className="form-input"
+              placeholder="Password"
+              required
             />
-            <button 
-              type="button" 
-              className="input-icon-right" 
+            <button
+              type="button"
+              className="input-icon-right"
               onClick={() => setShowPassword(!showPassword)}
               style={{ background: 'none', border: 'none', padding: 0 }}
             >

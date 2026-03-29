@@ -6,29 +6,36 @@
 }
 
 .reg-header {
-  background-color: #d8d8d8; /* Light gray header */
+  background-color: #FFFFFF; /* Crisp white header */
   padding: 1rem 2rem;
   display: flex;
   align-items: center;
   gap: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05); /* Subtle shadow */
+  border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .reg-logo-icon {
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
-  background-color: #1e4d3b; /* Greenish/dark logo color */
+  background-color: var(--color-accent); /* Dark forest green */
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
+  box-shadow: 0 2px 5px rgba(30, 77, 59, 0.3);
 }
 
 .reg-header-title {
-  font-size: 1.25rem;
+  font-size: 1.125rem;
   font-weight: 700;
-  color: #4b5563;
+  color: var(--color-primary);
   letter-spacing: 0.5px;
+  text-transform: uppercase;
 }
 
 .reg-content {
@@ -50,38 +57,41 @@
 }
 
 .reg-step-title {
-  font-size: 1.125rem;
+  font-size: 1.25rem;
   font-weight: 700;
-  color: #4b5563;
+  color: var(--color-primary);
   margin-bottom: 0.75rem;
 }
 
 .progress-bar-container {
   width: 100%;
   height: 8px;
-  background-color: #d1d5db;
+  background-color: var(--color-border);
   border-radius: 4px;
   overflow: hidden;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.75rem;
 }
 
 .progress-bar-fill {
   height: 100%;
-  background-color: #6b7280;
+  background-color: var(--color-secondary); /* Growth Green */
   border-radius: 4px;
-  transition: width 0.3s ease;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .reg-step-subtitle {
   font-size: 0.875rem;
-  color: #6b7280;
+  color: var(--color-text-muted);
+  font-weight: 500;
 }
 
 .reg-card {
-  background-color: var(--color-bg-reg);
+  background-color: var(--color-bg-card);
   border-radius: var(--radius-lg);
-  padding: 2rem;
+  padding: 2.5rem;
   width: 100%;
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0,0,0,0.02);
 }
 
 @media (max-width: 768px) {

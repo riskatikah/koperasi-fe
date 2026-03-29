@@ -9,7 +9,7 @@ const AuthLayout = () => {
       {/* Left side Image Pane */}
       <div className="auth-image-pane">
         <div className="auth-overlay">
-          <h1>KOPERASI PT SANOH INDONESIA<br/><span>SINERGI BERSAMA</span></h1>
+          <h1>KOPERASI PT SANOH INDONESIA<br /><span>SINERGI BERSAMA</span></h1>
           <ul className="auth-contact-list">
             <li>
               <MapPin size={18} />

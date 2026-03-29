@@ -9,8 +9,7 @@ const RegisterStep3 = () => {
   const handleFinish = (e) => {
     e.preventDefault();
     if (agreed) {
-      alert("Registration submitted successfully!");
-      navigate('/login');
+      navigate('/register/step-4');
     }
   };
 
