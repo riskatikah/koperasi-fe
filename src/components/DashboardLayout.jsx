@@ -33,7 +33,10 @@ const DashboardLayout = () => {
   let title = 'Portal Dashboard';
   let breadcrumb = 'Overview';
 
-  if (currentPath.includes('/saving')) {
+  if (currentPath.includes('/admin/ls-loans')) {
+    title = 'Admin Loans Dashboard';
+    breadcrumb = 'Admin / Loans';
+  } else if (currentPath.includes('/saving')) {
     title = 'My Saving';
     breadcrumb = 'My Saving';
   } else if (currentPath.includes('/loans')) {

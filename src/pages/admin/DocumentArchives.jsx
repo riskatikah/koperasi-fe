@@ -28,15 +28,11 @@ const DocumentArchives = () => {
         <div className="da-controls">
           <div className="da-search">
             <Search size={16} color="#94A3B8" />
-            <span style={{ fontSize: '14px', color: '#1E293B', fontWeight: '700', marginRight: '8px' }}>Upload Document <span style={{ fontSize: '10px', color: '#94A3B8', fontWeight: '400' }}>(max 100kb)</span></span>
+            {/* <span style={{ fontSize: '14px', color: '#1E293B', fontWeight: '700', marginRight: '8px' }}>Upload Document <span style={{ fontSize: '10px', color: '#94A3B8', fontWeight: '400' }}>(max 100kb)</span></span> */}
             <input type="text" placeholder="Search by title, ID, or content..." style={{ flex: 1 }} />
           </div>
           <div className="da-dropdown">
             <span>All Types</span>
-            <ChevronDown size={14} color="#64748B" />
-          </div>
-          <div className="da-dropdown">
-            <span>Last 30 Days</span>
             <ChevronDown size={14} color="#64748B" />
           </div>
         </div>
@@ -75,7 +71,7 @@ const DocumentArchives = () => {
         <div className="da-modal-overlay">
           <div className="da-modal">
             <h2 className="da-modal-title">Upload Document</h2>
-            
+
             <div className="da-modal-body">
               <div className="da-upload-box">
                 <span style={{ color: 'transparent' }}>Choose File</span>

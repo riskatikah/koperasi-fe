@@ -32,6 +32,9 @@ import CloseAccountDetail from './pages/admin/CloseAccountDetail';
 import TransactionHistory from './pages/admin/TransactionHistory';
 import ManualPayment from './pages/admin/ManualPayment';
 import DocumentArchives from './pages/admin/DocumentArchives';
+import AdminLoansDashboard from './pages/admin/AdminLoansDashboard';
+import AdminPendingApprovals from './pages/admin/AdminPendingApprovals';
+import AdminLoanDetail from './pages/admin/AdminLoanDetail';
 
 function App() {
   return (
@@ -69,6 +72,9 @@ function App() {
           
           {/* Admin Pages */}
           <Route path="admin" element={<AdminDashboard />} />
+          <Route path="admin/ls-loans" element={<AdminLoansDashboard />} />
+          <Route path="admin/ls-loans/pending" element={<AdminPendingApprovals />} />
+          <Route path="admin/ls-loans/:id" element={<AdminLoanDetail />} />
           <Route path="admin/members" element={<MemberManagement />} />
           <Route path="admin/members/:id" element={<MemberDetail />} />
           <Route path="admin/approvals" element={<MemberApprovals />} />
