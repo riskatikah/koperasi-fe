@@ -524,3 +524,122 @@
   background: #F1F5F9;
   color: #EF4444;
 }
+
+.shu-container {
+  padding: 20px;
+}
+
+/* HEADER */
+.shu-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* FILTER */
+.shu-filter select {
+  margin-left: 8px;
+  padding: 6px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* TABLE */
+.shu-table-container {
+  background: white;
+  padding: 16px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.shu-table-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.shu-total-badge {
+  background: #e0ecff;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* TABLE STYLE */
+.shu-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f0f6ff;
+}
+
+.shu-table th {
+  background: #cfe0ff;
+  padding: 10px;
+}
+
+.shu-table td {
+  padding: 10px;
+  border-bottom: 1px solid #cfe0ff;
+}
+
+/* ACTION BUTTON */
+.action-cell {
+  display: flex;
+  gap: 6px;
+}
+
+/* BUTTON */
+.btn-add {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-table {
+  padding: 4px 10px;
+  font-size: 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+/* EDIT */
+.btn-edit {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+/* SAVE */
+.btn-save {
+  background: #2563eb;
+  color: white;
+}
+
+/* CANCEL */
+.btn-cancel {
+  background: #f1f5f9;
+  border: 1px solid #ccc;
+}
+
+/* FORM */
+.shu-card {
+  margin-top: 20px;
+  padding: 16px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+}
+
+.shu-card input {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 6px;
+}
+
+.shu-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
