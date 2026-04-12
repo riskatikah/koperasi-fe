@@ -32,6 +32,12 @@ import CloseAccountDetail from './pages/admin/CloseAccountDetail';
 import TransactionHistory from './pages/admin/TransactionHistory';
 import ManualPayment from './pages/admin/ManualPayment';
 import DocumentArchives from './pages/admin/DocumentArchives';
+import PayrollLoans from './pages/admin/PayrollLoans';
+import PayrollSavings from './pages/admin/PayrollSavings';
+import SHUDashboard from './pages/admin/SHUDashboard';
+import SHUIncomeTransaction from './pages/admin/SHUIncomeTransaction';
+import SHUOutcomeTransaction from './pages/admin/SHUOutcomeTransaction';
+import SHUMasterData from './pages/admin/SHUMasterData';
 import AdminLoansDashboard from './pages/admin/AdminLoansDashboard';
 import AdminPendingApprovals from './pages/admin/AdminPendingApprovals';
 import AdminLoanDetail from './pages/admin/AdminLoanDetail';
@@ -83,6 +89,12 @@ function App() {
           <Route path="admin/transaction/history" element={<TransactionHistory />} />
           <Route path="admin/transaction/manual" element={<ManualPayment />} />
           <Route path="admin/archives" element={<DocumentArchives />} />
+          <Route path="admin/pr-loans" element={<PayrollLoans />} />
+          <Route path="admin/pr-savings" element={<PayrollSavings />} />
+          <Route path="admin/shu-dashboard" element={<SHUDashboard />} />
+          <Route path="admin/shu-income" element={<SHUIncomeTransaction />} />
+          <Route path="admin/shu-outcome" element={<SHUOutcomeTransaction />} />
+          <Route path="admin/shu-master" element={<SHUMasterData />} />
         </Route>
       </Routes>
     </BrowserRouter>
