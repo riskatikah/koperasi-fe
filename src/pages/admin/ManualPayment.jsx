@@ -61,12 +61,15 @@ const ManualPayment = () => {
           <h2 className="mp-section-title">Payment</h2>
           <div className="mp-payment-inputs">
             <div className="mp-input-wrap select">
-              <select>
-                <option>Transaction Type</option>
+              <select className="mp-clean-input">
+                <option value="">Transaction Type</option>
+                <option value="mandatory">Mandatory Saving</option>
+                <option value="voluntary">Voluntary Saving</option>
+                <option value="loan">Loan Repayment</option>
               </select>
             </div>
             <div className="mp-input-wrap">
-              <input type="text" placeholder="Rp" />
+              <input type="text" className="mp-clean-input" placeholder="Rp 0,00" />
             </div>
           </div>
         </div>

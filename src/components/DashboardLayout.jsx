@@ -18,6 +18,21 @@ const DashboardLayout = () => {
     transaction: false,
   });
 
+  const [showAllNotifs, setShowAllNotifs] = useState(false);
+
+  const dummyNotifs = [
+    { id: 1, type: 'success', title: 'Payment Successful', desc: 'Your loan installment of Rp 1.005.000 has been paid.', time: 'Just now', unread: true },
+    { id: 2, type: 'warning', title: 'Payment Due', desc: 'Your next loan deduction is due in 3 days.', time: '2 hours ago', unread: false },
+    { id: 3, type: 'info', title: 'System Update', desc: 'Koperasi Sanoh dashboard has been updated!', time: '1 day ago', unread: false },
+    { id: 4, type: 'info', title: 'New Feature', desc: 'Check out the new My Savings feature on your dashboard.', time: '2 days ago', unread: false },
+    { id: 5, type: 'success', title: 'Withdrawal Approved', desc: 'Your voluntary saving withdrawal of Rp 500.000 has been approved.', time: '3 days ago', unread: false },
+    { id: 6, type: 'warning', title: 'Action Required', desc: 'Please update your profile to access all features.', time: '4 days ago', unread: false },
+    { id: 7, type: 'info', title: 'Monthly Statement', desc: 'Your monthly cooperative statement is ready to view.', time: '1 week ago', unread: false },
+    { id: 8, type: 'info', title: 'System Maintenance', desc: 'The system will be down for maintenance this weekend.', time: '1 week ago', unread: false },
+    { id: 9, type: 'success', title: 'Registration Complete', desc: 'Welcome! Your cooperative membership Registration is Approved.', time: '2 weeks ago', unread: false },
+    { id: 10, type: 'info', title: 'Welcome to Koperasi Sanoh', desc: 'Thank you for joining Koperasi Sanoh.', time: '2 weeks ago', unread: false },
+  ];
+
   const toggleSection = (sec) => {
     setOpenSections(prev => ({ ...prev, [sec]: !prev[sec] }));
   };
@@ -242,34 +257,24 @@ const DashboardLayout = () => {
                     <h4>Notifications</h4>
                     <span className="dl-notif-mark">Mark all as read</span>
                   </div>
-                  <div className="dl-notif-body">
-                    <div className="dl-notif-item unread">
-                      <div className="dl-notif-icon success"><CheckCircle size={14} /></div>
-                      <div className="dl-notif-content">
-                        <p><strong>Payment Successful</strong></p>
-                        <p>Your loan installment of Rp 1.005.000 has been paid.</p>
-                        <span className="time">Just now</span>
+                  <div className="dl-notif-body" style={{ maxHeight: showAllNotifs ? '400px' : 'auto', overflowY: showAllNotifs ? 'auto' : 'hidden' }}>
+                    {dummyNotifs.slice(0, showAllNotifs ? dummyNotifs.length : 3).map((notif) => (
+                      <div key={notif.id} className={`dl-notif-item ${notif.unread ? 'unread' : ''}`}>
+                        <div className={`dl-notif-icon ${notif.type}`}>
+                          {notif.type === 'success' ? <CheckCircle size={14} /> : notif.type === 'warning' ? <AlertTriangle size={14} /> : <Bell size={14} />}
+                        </div>
+                        <div className="dl-notif-content">
+                          <p><strong>{notif.title}</strong></p>
+                          <p>{notif.desc}</p>
+                          <span className="time">{notif.time}</span>
+                        </div>
                       </div>
-                    </div>
-                    <div className="dl-notif-item">
-                      <div className="dl-notif-icon warning"><AlertTriangle size={14} /></div>
-                      <div className="dl-notif-content">
-                        <p><strong>Payment Due</strong></p>
-                        <p>Your next loan deduction is due in 3 days.</p>
-                        <span className="time">2 hours ago</span>
-                      </div>
-                    </div>
-                    <div className="dl-notif-item">
-                      <div className="dl-notif-icon info"><Bell size={14} /></div>
-                      <div className="dl-notif-content">
-                        <p><strong>System Update</strong></p>
-                        <p>Koperasi Sanoh dashboard has been updated!</p>
-                        <span className="time">1 day ago</span>
-                      </div>
-                    </div>
+                    ))}
                   </div>
                   <div className="dl-notif-footer">
-                    <button>View All Notifications</button>
+                    <button onClick={() => setShowAllNotifs(!showAllNotifs)}>
+                      {showAllNotifs ? 'Show Less' : 'View All Notifications'}
+                    </button>
                   </div>
                 </div>
               )}

@@ -298,12 +298,25 @@
 /* Withdraw Layout */
 .wd-layout {
   display: grid;
-  grid-template-columns: 1fr 340px;
   gap: 24px;
 }
-@media (max-width: 900px) {
-  .wd-layout { grid-template-columns: 1fr; }
+.wd-layout-refactored {
+  display: flex;
+  flex-direction: column;
 }
+
+@media (min-width: 900px) {
+  .wd-layout-refactored {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    align-items: flex-start;
+  }
+  .wd-form-panel {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+  }
+}
+
 .wd-left {
   display: flex;
   flex-direction: column;

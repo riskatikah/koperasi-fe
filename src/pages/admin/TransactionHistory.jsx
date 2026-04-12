@@ -1,8 +1,16 @@
-import React from 'react';
-import { DollarSign, Briefcase, ChevronDown, Calendar, ChevronRight } from 'lucide-react';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
+import { DollarSign, Briefcase, ChevronDown, Calendar, ChevronRight, X } from 'lucide-react';
 import './TransactionHistory.css';
 
 const TransactionHistory = () => {
+  const [showDetailModal, setShowDetailModal] = useState(false);
+  const [selectedRowContext, setSelectedRowContext] = useState(null);
+
+  const handleRowDoubleClick = (rowId) => {
+    setSelectedRowContext(rowId);
+    setShowDetailModal(true);
+  };
   return (
     <div className="th-container">
       <h1 className="th-title">Transaction History</h1>
@@ -74,9 +82,9 @@ const TransactionHistory = () => {
           </thead>
           <tbody>
             {[1, 2, 3].map((row) => (
-              <tr key={row}>
+              <tr key={row} onDoubleClick={() => handleRowDoubleClick(row)} style={{ cursor: 'pointer' }}>
                 <td>Jan 8th,2022</td>
-                <td>r</td>
+                <td>Rafilla Shalwa</td>
                 <td>{row === 1 ? 'Voluntary Saving' : 'Mandatory Saving'}</td>
                 <td>Rp 50.000,00</td>
                 <td>Completed</td>
@@ -95,6 +103,48 @@ const TransactionHistory = () => {
         <button className="th-page-btn">10</button>
         <button className="th-page-btn next">NEXT <ChevronRight size={14} /></button>
       </div>
+
+      {showDetailModal && createPortal(
+        <div className="modal-overlay" onClick={(e) => e.target === e.currentTarget && setShowDetailModal(false)}>
+          <div className="closure-modal" style={{ maxWidth: '500px', cursor: 'default' }} onClick={e => e.stopPropagation()}>
+            <div className="cm-header">
+              <div>
+                <h2>Transaction Details</h2>
+              </div>
+              <button className="cm-close" onClick={() => setShowDetailModal(false)}>
+                <X size={16} />
+              </button>
+            </div>
+            <div className="cm-body" style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #E2E8F0', paddingBottom: '8px' }}>
+                <span style={{ color: '#64748B', fontWeight: 600 }}>ID Transaction</span>
+                <strong>INV-001239{selectedRowContext}</strong>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #E2E8F0', paddingBottom: '8px' }}>
+                <span style={{ color: '#64748B', fontWeight: 600 }}>Date</span>
+                <strong>Jan 8th, 2022 14:03</strong>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #E2E8F0', paddingBottom: '8px' }}>
+                <span style={{ color: '#64748B', fontWeight: 600 }}>Member Name</span>
+                <strong>Rafilla Shalwa</strong>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #E2E8F0', paddingBottom: '8px' }}>
+                <span style={{ color: '#64748B', fontWeight: 600 }}>Transaction Type</span>
+                <strong>{selectedRowContext === 1 ? 'Voluntary Saving' : 'Mandatory Saving'}</strong>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px solid #E2E8F0', paddingBottom: '8px' }}>
+                <span style={{ color: '#64748B', fontWeight: 600 }}>Status</span>
+                <strong style={{ color: '#16A34A' }}>Completed</strong>
+              </div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', paddingTop: '8px' }}>
+                <span style={{ color: '#1E293B', fontWeight: 700, fontSize: '18px' }}>Amount</span>
+                <strong style={{ fontSize: '18px' }}>Rp 50.000,00</strong>
+              </div>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 };

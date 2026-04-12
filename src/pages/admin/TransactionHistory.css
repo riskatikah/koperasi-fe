@@ -222,3 +222,24 @@
   padding: 0 12px;
   gap: 4px;
 }
+
+@media (max-width: 900px) {
+  .th-cards {
+    flex-wrap: wrap;
+  }
+  .th-card {
+    min-width: 250px;
+  }
+  .th-filters-modern {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .th-fm-actions {
+    width: 100%;
+    justify-content: flex-end;
+  }
+  .th-table-wrap {
+    overflow-x: auto;
+  }
+}

@@ -317,3 +317,20 @@
 
 .ald-status.active::before { background: #4f7df3; }
 .ald-status.paid::before { background: #52c41a; }
+
+@media (max-width: 768px) {
+  .ald-table-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .ald-search {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .ald-filter select {
+    width: 100%;
+  }
+  .ald-print-btn {
+    width: 100%;
+  }
+}

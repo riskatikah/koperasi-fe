@@ -146,7 +146,6 @@ const PayrollLoans = () => {
           <div className="ps-stat-card" key={i}>
             <div className="ps-stat-top">
               <span className="ps-stat-name">{stat.name}</span>
-              <span className="ps-stat-dots">⋮</span>
             </div>
             <div className="ps-stat-val-row">
               <div className="ps-stat-icon">
@@ -155,9 +154,6 @@ const PayrollLoans = () => {
               <strong className={stat.isGreen ? 'green-text' : ''}>
                 {stat.val}
               </strong>
-              <div className="ps-stat-arrow">
-                <ArrowUp size={16} />
-              </div>
             </div>
           </div>
         ))}

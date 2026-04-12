@@ -235,8 +235,8 @@ const MySaving = () => {
 
       {/* ─── WITHDRAWS VIEW ─── */}
       {activeTab === 'withdraws' && (
-        <div className="wd-layout" style={{ gridTemplateColumns: showWithdrawForm ? '1fr 340px' : '1fr' }}>
-          {/* Left Side */}
+        <div className="wd-layout wd-layout-refactored">
+          {/* Top Left (Banner & Chart) */}
           <div className="wd-left">
             <div className="sv-banner navy">
               <div className="sv-banner-left">
@@ -266,23 +266,11 @@ const MySaving = () => {
                 <Line data={chartData} options={chartOptions} />
               </div>
             </div>
-
-            <h3 style={{fontSize: 18, margin: '8px 0', fontFamily: 'Syne', fontWeight: 700}}>Approvals</h3>
-            <div className="appr-list">
-              <div className="appr-item">
-                <p>Kebutuhan mendadak untuk renovasi rumah<br/><strong>8.000.000</strong></p>
-                <div className="appr-badge pending">Pending</div>
-              </div>
-              <div className="appr-item">
-                <p>Kebutuhan mendadak untuk renovasi rumah<br/><strong>8.000.000</strong></p>
-                <div className="appr-badge complete">Complete</div>
-              </div>
-            </div>
           </div>
 
           {/* Right Side Withdraw Form (Appears when clicked) */}
           {showWithdrawForm && (
-            <div className="sv-card slide-in-right" style={{ alignSelf: 'flex-start' }}>
+            <div className="sv-card slide-in-right wd-form-panel">
               <div className="sv-card-header">
                 <h3 className="sv-card-title">Withdraw Amount</h3>
                 <button onClick={() => setShowWithdrawForm(false)} style={{background: 'none', border:'none', cursor:'pointer', color:'#94A3B8'}}>
@@ -314,8 +302,25 @@ const MySaving = () => {
               <button className="btn btn-navy" style={{width: '100%', padding: '14px', borderRadius: 10}}>Submit</button>
             </div>
           )}
+
+          {/* Bottom Left (Approvals) */}
+          <div className="wd-left-bottom wd-left" style={{ gridColumn: '1 / 2' }}>
+            <h3 style={{fontSize: 18, margin: '8px 0', fontFamily: 'Syne', fontWeight: 700}}>Approvals</h3>
+            <div className="appr-list">
+              <div className="appr-item">
+                <p>Kebutuhan mendadak untuk renovasi rumah<br/><strong>8.000.000</strong></p>
+                <div className="appr-badge pending">Pending</div>
+              </div>
+              <div className="appr-item">
+                <p>Kebutuhan mendadak untuk renovasi rumah<br/><strong>8.000.000</strong></p>
+                <div className="appr-badge complete">Complete</div>
+              </div>
+            </div>
+          </div>
         </div>
       )}
+
+
 
       {/* ─── PAYMENT MODAL ─── */}
       {showPaymentModal && createPortal(

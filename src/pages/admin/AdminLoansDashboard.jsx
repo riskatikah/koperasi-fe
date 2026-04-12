@@ -27,7 +27,6 @@ const AdminLoansDashboard = () => {
           <div key={i} className="ald-stat-card">
             <div className="ald-stat-top">
               <div className="ald-stat-title">{stat.title}</div>
-              <MoreHorizontal size={16} color="#888" />
             </div>
             <div className="ald-stat-body">
               <div className="ald-stat-icon-wrapper">
@@ -47,10 +46,10 @@ const AdminLoansDashboard = () => {
             View More &rarr;
           </Link>
         </div>
-        
+
         <div className="ald-pending-list">
           {[1, 2, 3].map((item) => (
-            <div key={item} className="ald-pending-card">
+            <div key={item} className="ald-pending-card" onClick={() => handlePendingDetails(item)} style={{ cursor: 'pointer' }}>
               <div className="ald-pc-top">
                 <div className="ald-pc-avatar"></div>
                 <div className="ald-pc-info">
@@ -58,7 +57,6 @@ const AdminLoansDashboard = () => {
                   <div className="ald-pc-dept">HRD & GA</div>
                   <div className="ald-pc-id">0072871</div>
                 </div>
-                <MoreHorizontal size={16} color="#888" />
               </div>
               <div className="ald-pc-mid">
                 <div className="ald-pc-col">

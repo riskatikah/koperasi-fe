@@ -10,20 +10,7 @@ const ApprovalDetail = () => {
   return (
     <div className="ad-detail-container">
       <div className="add-header">
-        <div className="add-tabs">
-          <button 
-            className={`add-tab-btn ${activeTab === 'new' ? 'active' : ''}`}
-            onClick={() => setActiveTab('new')}
-          >
-            New Member
-          </button>
-          <button 
-            className={`add-tab-btn ${activeTab === 'close' ? 'active' : ''}`}
-            onClick={() => setActiveTab('close')}
-          >
-            Close Account
-          </button>
-        </div>
+
         <h1 className="add-title">Permintaan Pendaftaran Akun Baru</h1>
       </div>
 

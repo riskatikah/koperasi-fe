@@ -12,6 +12,14 @@ const RegisterStep5 = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Passwords do not match");
+      return;
+    }
+    // Simulate encryption before saving to database
+    const encryptedPassword = btoa(password);
+    console.log("Encrypted Password Saved:", encryptedPassword);
+    
     navigate('/register/under-review');
   };
 
@@ -39,17 +47,18 @@ const RegisterStep5 = () => {
       <form onSubmit={handleSubmit} className="reg-form mt-6">
         <div className="reg-form-group relative">
           <label className="reg-form-label">Password</label>
-          <div className="password-input-wrapper relative">
-             <span className="input-icon-left"><ShieldCheck size={18} /></span>
+          <div className="password-input-wrapper relative flex items-center">
+             <span className="input-icon-left" style={{ position: 'absolute', left: '12px', zIndex: 1, top: '50%', transform: 'translateY(-50%)', display: 'flex', alignItems: 'center' }}><ShieldCheck size={18} /></span>
              <input
                type={showPassword ? "text" : "password"}
                className="reg-form-input pl-10 pr-10"
+               style={{ paddingLeft: '35px', paddingRight: '40px', width: '100%', boxSizing: 'border-box' }}
                placeholder="Password"
                value={password}
                onChange={(e) => setPassword(e.target.value)}
                required
              />
-             <button type="button" onClick={togglePassword} className="password-toggle absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+             <button type="button" onClick={togglePassword} className="password-toggle absolute text-gray-400" style={{ position: 'absolute', right: '12px', zIndex: 1, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', padding: 0, display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
              </button>
           </div>
@@ -64,17 +73,18 @@ const RegisterStep5 = () => {
 
         <div className="reg-form-group relative mt-2">
           <label className="reg-form-label">Confirm Password</label>
-          <div className="password-input-wrapper relative">
-             <span className="input-icon-left"><ShieldCheck size={18} /></span>
+          <div className="password-input-wrapper relative flex items-center">
+             <span className="input-icon-left" style={{ position: 'absolute', left: '12px', zIndex: 1, top: '50%', transform: 'translateY(-50%)', display: 'flex', alignItems: 'center' }}><ShieldCheck size={18} /></span>
              <input
                type={showConfirm ? "text" : "password"}
                className="reg-form-input pl-10 pr-10"
+               style={{ paddingLeft: '35px', paddingRight: '40px', width: '100%', boxSizing: 'border-box' }}
                placeholder="Re-enter your password"
                value={confirmPassword}
                onChange={(e) => setConfirmPassword(e.target.value)}
                required
              />
-             <button type="button" onClick={toggleConfirm} className="password-toggle absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400">
+             <button type="button" onClick={toggleConfirm} className="password-toggle absolute text-gray-400" style={{ position: 'absolute', right: '12px', zIndex: 1, top: '50%', transform: 'translateY(-50%)', background: 'none', border: 'none', padding: 0, display: 'flex', alignItems: 'center', cursor: 'pointer' }}>
                {showConfirm ? <EyeOff size={20} /> : <Eye size={20} />}
              </button>
           </div>

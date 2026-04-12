@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShoppingBag, Users, Calendar, ArrowUp } from 'lucide-react';
 import { Line } from 'react-chartjs-2';
+import { useNavigate } from 'react-router-dom';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -26,6 +27,7 @@ ChartJS.register(
 );
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
   // Chart Data
   const shuData = {
     labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sun', 'Sat'],
@@ -83,7 +85,7 @@ const AdminDashboard = () => {
             </div>
           </div>
         </div>
-        
+
         <div className="ad-stat-card">
           <div className="ad-stat-icon" style={{ background: '#4880F0' }}>
             <ShoppingBag size={24} />
@@ -125,12 +127,11 @@ const AdminDashboard = () => {
       {/* Pending Approvals List */}
       <div className="ad-section-title">
         <h2>Pending Approvals</h2>
-        <span>View More →</span>
       </div>
 
       <div className="ad-approvals-row">
         {[1, 2, 3].map((item) => (
-          <div className="ad-approval-card" key={item}>
+          <div className="ad-approval-card" key={item} onDoubleClick={() => navigate(`/dashboard/admin/ls-loans/${item}`)} style={{ cursor: 'pointer' }}>
             <div className="ad-ac-header">
               <div className="ad-ac-avatar"></div>
               <div className="ad-ac-info">
@@ -139,11 +140,11 @@ const AdminDashboard = () => {
                 <strong>Loan</strong>
               </div>
             </div>
-            
+
             <div className="ad-ac-body">
               <div className="ad-col">
                 <span className="lbl">Purpose</span>
-                <span className="val" style={{maxWidth: 160}}>Kebutuhan mendadak untuk renovasi rumah</span>
+                <span className="val" style={{ maxWidth: 160 }}>Kebutuhan mendadak untuk renovasi rumah</span>
               </div>
               <div className="ad-col">
                 <span className="lbl">Term</span>
@@ -169,9 +170,12 @@ const AdminDashboard = () => {
         <div className="ad-chart-card">
           <div className="ad-chart-header">
             <h3>SHU</h3>
-            <select className="ad-chart-select" defaultValue="week">
-              <option value="week">This week</option>
-              <option value="month">This month</option>
+            <select className="ad-chart-select" defaultValue="1month">
+              <option value="1month">Last 1 month</option>
+              <option value="3month">Last 3 months</option>
+              <option value="6month">Last 6 months</option>
+              <option value="1year">Last 1 year</option>
+              <option value="3year">Last 3 years</option>
             </select>
           </div>
           <div className="ad-chart-body">
@@ -182,8 +186,12 @@ const AdminDashboard = () => {
         <div className="ad-chart-card">
           <div className="ad-chart-header">
             <h3>Net sales</h3>
-            <select className="ad-chart-select" defaultValue="month">
-              <option value="month">This month</option>
+            <select className="ad-chart-select" defaultValue="1month">
+              <option value="1month">Last 1 month</option>
+              <option value="3month">Last 3 months</option>
+              <option value="6month">Last 6 months</option>
+              <option value="1year">Last 1 year</option>
+              <option value="3year">Last 3 years</option>
             </select>
           </div>
           <div className="ad-chart-body">

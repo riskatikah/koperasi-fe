@@ -239,6 +239,7 @@
 }
 
 .ad-chart-body {
+  position: relative;
   height: 240px;
   width: 100%;
 }
@@ -250,5 +251,4 @@
 
 @media (max-width: 600px) {
   .ad-stats { grid-template-columns: 1fr; }
-  .ad-approvals-row { flex-direction: column; }
 }

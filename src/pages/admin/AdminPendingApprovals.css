@@ -56,6 +56,7 @@
   border-radius: 12px;
   border: 1px solid #eaeaea;
   gap: 24px;
+  flex-wrap: wrap; /* Added for responsiveness */
 }
 
 .apa-card-avatar {
@@ -138,8 +139,12 @@
 /* Active Content */
 .apa-stats {
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   margin-bottom: 24px;
+}
+.apa-stat-card {
+  min-width: 200px;
 }
 
 .apa-stat-card {
@@ -190,6 +195,7 @@
 .apa-filters {
   display: flex;
   align-items: flex-end;
+  flex-wrap: wrap;
   gap: 16px;
   background: #eaeaec;
   padding: 16px;

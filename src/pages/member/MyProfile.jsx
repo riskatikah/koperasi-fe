@@ -8,9 +8,28 @@ const MyProfile = () => {
   const [isAgreed, setIsAgreed] = useState(false);
   const [reason, setReason] = useState('');
 
+  const [isEditing, setIsEditing] = useState(false);
+  const [profile, setProfile] = useState({
+    phone: '',
+    email: '',
+    destBank: '',
+    accName: '',
+    accNo: '',
+    volSaving: ''
+  });
+
   const reasonLength = reason.length;
   const isReasonValid = reasonLength >= 500;
   const canProcess = isAgreed && isReasonValid;
+
+  const handleSaveProfile = () => {
+    if (!profile.phone || !profile.email || !profile.destBank || !profile.accName || !profile.accNo || !profile.volSaving) {
+      alert("All profile fields must be filled before saving.");
+      return;
+    }
+    setIsEditing(false);
+    alert("Profile saved successfully!");
+  };
 
   return (
     <div className="prof-page">
@@ -56,11 +75,11 @@ const MyProfile = () => {
             </div>
             <div className="inp-group">
               <label className="inp-label">PHONE NUMBER</label>
-              <input type="text" className="prof-input" value="+62 812 xxxx xxxx" disabled />
+              <input type="text" className="prof-input" value={profile.phone} onChange={e => setProfile({...profile, phone: e.target.value})} disabled={!isEditing} placeholder="+62 812 xxxx xxxx" />
             </div>
             <div className="inp-group">
               <label className="inp-label">EMAIL</label>
-              <input type="email" className="prof-input" value="riska@email.com" disabled />
+              <input type="email" className="prof-input" value={profile.email} onChange={e => setProfile({...profile, email: e.target.value})} disabled={!isEditing} placeholder="riska@email.com" />
             </div>
             <div className="inp-group">
               <label className="inp-label">ADDRESS</label>
@@ -72,20 +91,21 @@ const MyProfile = () => {
           <div className="pf-col">
             <div className="inp-group">
               <label className="inp-label">DESTINATION BANK ACCOUNT</label>
-              <select className="prof-input">
-                <option>BCA</option>
-                <option>Mandiri</option>
-                <option>BNI</option>
-                <option>BRI</option>
+              <select className="prof-input" value={profile.destBank} onChange={e => setProfile({...profile, destBank: e.target.value})} disabled={!isEditing}>
+                <option value="">Select Bank</option>
+                <option value="BCA">BCA</option>
+                <option value="Mandiri">Mandiri</option>
+                <option value="BNI">BNI</option>
+                <option value="BRI">BRI</option>
               </select>
             </div>
             <div className="inp-group">
               <label className="inp-label">ACCOUNT NAME</label>
-              <input type="text" className="prof-input" placeholder="Account holder name" />
+              <input type="text" className="prof-input" placeholder="Account holder name" value={profile.accName} onChange={e => setProfile({...profile, accName: e.target.value})} disabled={!isEditing} />
             </div>
             <div className="inp-group">
               <label className="inp-label">ACCOUNT NUMBER</label>
-              <input type="text" className="prof-input" placeholder="xxxx xxxx xxxx" />
+              <input type="text" className="prof-input" placeholder="xxxx xxxx xxxx" value={profile.accNo} onChange={e => setProfile({...profile, accNo: e.target.value})} disabled={!isEditing} />
             </div>
             <div className="inp-group" style={{ marginTop: '24px' }}>
               <label className="inp-label">
@@ -94,17 +114,17 @@ const MyProfile = () => {
               <span className="inp-desc">Editable only on the 22nd–23rd of each month (book closing period)</span>
               <div className="input-with-prefix">
                 <div className="prefix">Rp</div>
-                <input type="text" value="0" disabled />
+                <input type="text" placeholder="0" value={profile.volSaving} onChange={e => setProfile({...profile, volSaving: e.target.value})} disabled={!isEditing} />
               </div>
             </div>
           </div>
         </div>
 
         <div className="pf-actions">
-          <button className="btn btn-outline">
-            <Edit2 size={16} /> Edit Profile
+          <button className="btn btn-outline" onClick={() => setIsEditing(!isEditing)}>
+            <Edit2 size={16} /> {isEditing ? 'Cancel Edit' : 'Edit Profile'}
           </button>
-          <button className="btn btn-navy">Save</button>
+          <button className="btn btn-navy" onClick={handleSaveProfile} disabled={!isEditing} style={{ opacity: isEditing ? 1 : 0.6, cursor: isEditing ? 'pointer' : 'not-allowed' }}>Save</button>
         </div>
       </div>
 

@@ -5,11 +5,50 @@ import './RegistrationPages.css';
 
 const RegisterStep4 = () => {
   const navigate = useNavigate();
-  const [code, setCode] = useState('');
+  const [code, setCode] = useState(['', '', '', '', '', '']);
+
+  const handleChange = (index, value) => {
+    // allow only numbers
+    if (value && !/^\d+$/.test(value)) return;
+    
+    const newCode = [...code];
+    // handle paste
+    if (value.length > 1) {
+      const pasted = value.slice(0, 6).split('');
+      for (let i = 0; i < pasted.length; i++) {
+        newCode[i] = pasted[i];
+      }
+      setCode(newCode);
+      // focus last filled
+      const lastIdx = Math.min(pasted.length, 5);
+      const el = document.getElementById(`code-${lastIdx}`);
+      if (el) el.focus();
+      return;
+    }
+
+    newCode[index] = value;
+    setCode(newCode);
+
+    // move to next
+    if (value && index < 5) {
+      const next = document.getElementById(`code-${index + 1}`);
+      if (next) next.focus();
+    }
+  };
+
+  const handleKeyDown = (index, e) => {
+    if (e.key === 'Backspace' && !code[index] && index > 0) {
+      const prev = document.getElementById(`code-${index - 1}`);
+      if (prev) prev.focus();
+    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    navigate('/register/step-5');
+    const fullCode = code.join('');
+    if (fullCode.length === 6) {
+      navigate('/register/step-5');
+    }
   };
 
   return (
@@ -25,23 +64,30 @@ const RegisterStep4 = () => {
       <form onSubmit={handleSubmit} className="reg-form mt-6">
         <div className="reg-form-group">
           <label className="reg-form-label text-center">Verification Code</label>
-          <input
-            type="text"
-            className="reg-form-input text-center text-letter-spacing"
-            placeholder="Enter 6-digit code"
-            maxLength={6}
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            required
-            autoFocus
-          />
+          <div className="flex justify-center gap-2 mt-2" style={{ display: 'flex', gap: '0.5rem', justifyContent: 'center' }}>
+            {code.map((digit, index) => (
+              <input
+                key={index}
+                id={`code-${index}`}
+                type="text"
+                className="reg-form-input text-center"
+                style={{ width: '3rem', height: '3.5rem', fontSize: '1.5rem', padding: '0', borderRadius: '8px' }}
+                maxLength={6}
+                value={digit}
+                onChange={(e) => handleChange(index, e.target.value)}
+                onKeyDown={(e) => handleKeyDown(index, e)}
+                required
+                autoFocus={index === 0}
+              />
+            ))}
+          </div>
         </div>
 
         <div className="reg-actions justify-center mt-6">
           <button type="button" className="btn-secondary" onClick={() => navigate('/register/step-3')}>
             Back
           </button>
-          <button type="submit" className="btn-primary-sm" disabled={code.length < 6}>
+          <button type="submit" className="btn-primary-sm" disabled={code.join('').length < 6}>
             Verify Email &rarr;
           </button>
         </div>

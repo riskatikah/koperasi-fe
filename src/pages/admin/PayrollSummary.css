@@ -295,4 +295,24 @@
   .ps-filter { flex: 1; }
   .ps-search { max-width: 100%; }
   .ps-table-wrapper { overflow-x: auto; }
+  .ps-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 500px) {
+  .ps-header-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .ps-btn-export, .ps-btn-confirm {
+    width: 100%;
+    justify-content: center;
+  }
+  .ps-filters {
+    flex-direction: column;
+    width: 100%;
+  }
 }
