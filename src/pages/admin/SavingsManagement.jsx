@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-
+import "./SavingsManagement.css";
 export default function SavingsManagement() {
   const [search, setSearch] = useState("");
 
