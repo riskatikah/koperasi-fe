@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./SavingsManagement.css";
+import "./SavingsDashboard.css";
 
 export default function SavingsDasnhboard() {
   const [amount, setAmount] = useState(100000);
