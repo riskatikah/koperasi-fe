@@ -42,6 +42,12 @@ import AdminLoansDashboard from './pages/admin/AdminLoansDashboard';
 import AdminPendingApprovals from './pages/admin/AdminPendingApprovals';
 import AdminLoanDetail from './pages/admin/AdminLoanDetail';
 
+import SavingsDashboard from './pages/admin/SavingsDashboard';
+import SavingsManagement  from './pages/admin/SavingsManagement';
+import MandatorySavings from './pages/admin/MandatorySavings';
+import VoluntarySavings from  './pages/admin/VoluntarySavings';
+import WithdrawalRequests from "./pages/admin/WithdrawalRequests";
+import WithdrawalRequestDetail from "./pages/admin/WithdrawalRequestsDetail";
 function App() {
   return (
     <BrowserRouter>
@@ -95,6 +101,12 @@ function App() {
           <Route path="admin/shu-income" element={<SHUIncomeTransaction />} />
           <Route path="admin/shu-outcome" element={<SHUOutcomeTransaction />} />
           <Route path="admin/shu-master" element={<SHUMasterData />} />
+          <Route path="/dashboard/admin/ls-savings" element={<SavingsDashboard />} />
+          <Route path="admin/savings-management" element={<SavingsManagement />} />
+          <Route path="admin/mandatory-savings" element={<MandatorySavings />} />
+          <Route path="admin/voluntary-savings" element={<VoluntarySavings />} />
+          <Route path="/dashboard/admin/withdrawal-requests" element={<WithdrawalRequests />} />
+          <Route path="/dashboard/admin/withdrawal-requests/:id" element={<WithdrawalRequestDetail />} />
         </Route>
       </Routes>
     </BrowserRouter>

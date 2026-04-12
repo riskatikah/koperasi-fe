@@ -1,0 +1,167 @@
+.savings-container {
+  padding: 20px;
+  background: #f5f6f8;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* HEADER */
+.savings-header h2 {
+  margin-bottom: 10px;
+}
+
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+}
+
+.tab.active {
+  background: #d1d5db;
+  font-weight: bold;
+}
+
+/* MANDATORY */
+.mandatory-card {
+  display: flex;
+  gap: 20px;
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.rate-box {
+  width: 200px;
+  background: #dbe6ea;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.placeholder {
+  width: 80px;
+  height: 60px;
+  background: #eee;
+  margin: 0 auto 10px;
+  border-radius: 8px;
+}
+
+.amount {
+  font-weight: bold;
+}
+
+.mandatory-form {
+  flex: 1;
+}
+
+.mandatory-form input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  margin: 10px 0;
+}
+
+/* BUTTON */
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  padding: 8px 14px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: #3b82f6;
+  color: white;
+}
+
+.btn.secondary {
+  background: #e5e7eb;
+}
+
+.btn.reject {
+  background: #fee2e2;
+  color: red;
+}
+
+.btn.approve {
+  background: #dbeafe;
+  color: #2563eb;
+}
+
+/* PENDING */
+.pending-section {
+  margin-top: 30px;
+}
+
+.pending-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-list {
+  display: flex;
+  gap: 16px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+
+.approval-card {
+  width: 280px;
+  background: white;
+  padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.user-info {
+  display: flex;
+  gap: 10px;
+}
+
+.avatar {
+  width: 40px;
+  height: 40px;
+  background: #ddd;
+  border-radius: 8px;
+}
+
+.highlight {
+  color: green;
+  font-weight: 500;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #4f8dfd, #3b6edc);
+  color: white;
+}

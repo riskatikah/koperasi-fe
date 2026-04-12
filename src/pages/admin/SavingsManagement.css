@@ -1,0 +1,315 @@
+.savings-page {
+  padding: 24px;
+  background: #f5f6f8;
+}
+
+/* 🔙 breadcrumb */
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.breadcrumb a {
+  color: #6b7280;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* 🧾 title */
+.title {
+  margin-bottom: 16px;
+}
+
+.tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  padding: 10px 18px;
+  border-radius: 999px;
+  background: #e5e7eb;
+  text-decoration: none;
+  color: #374151;
+  font-weight: 500;
+}
+
+.tab.active {
+  background: linear-gradient(135deg, #4f8dfd, #3b6edc);
+  color: white;
+}
+
+/* 📦 card */
+.card {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+/* 🔍 header */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.table-header input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+}
+
+.table-header select {
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* 📊 table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  color: #6b7280;
+  padding: 10px;
+}
+
+td {
+  padding: 14px 10px;
+  border-top: 1px solid #eee;
+}
+
+.sub {
+  font-size: 12px;
+  color: gray;
+}
+
+.total {
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+/* HEADER FILTER */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* SEARCH */
+.search-box {
+  flex: 1;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  transition: 0.2s;
+}
+
+.search-box input:focus {
+  border-color: #4f8dfd;
+  box-shadow: 0 0 0 2px rgba(79, 141, 253, 0.15);
+}
+
+/* FILTER */
+.filter-box select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+/* HEADER FILTER */
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+/* SEARCH */
+.search-box {
+  flex: 1;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  outline: none;
+  transition: 0.2s;
+}
+
+.search-box input:focus {
+  border-color: #4f8dfd;
+  box-shadow: 0 0 0 2px rgba(79, 141, 253, 0.15);
+}
+
+/* FILTER */
+.filter-box select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+/* breadcrumb */
+.breadcrumb {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.breadcrumb a {
+  color: #6b7280;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.breadcrumb a:hover {
+  color: #3b82f6;
+  text-decoration: underline;
+}
+
+/* title */
+.page-title {
+  margin-bottom: 16px;
+}
+
+.empty {
+  text-align: center;
+  padding: 20px;
+  color: #9ca3af;
+  font-style: italic;
+}
+
+.filter-box {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-box select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+}
+
+/* ACTION BAR */
+.action-bar {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* GENERATE BUTTON */
+.btn-generate {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: #d1d5db;
+  color: #6b7280;
+  cursor: not-allowed;
+}
+
+.btn-generate.active {
+  background: linear-gradient(135deg, #4f8dfd, #3b6edc);
+  color: white;
+  cursor: pointer;
+}
+
+/* PRINT */
+.btn-print {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: none;
+  background: #e5e7eb;
+  cursor: pointer;
+}
+
+/* BILL PREVIEW */
+.bill-preview {
+  margin-top: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+}
+
+.bill-card {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+.action-bar {
+  display: flex;
+  justify-content: flex-end; /* 🔥 pindah ke kanan */
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+/* optional biar lebih rapi */
+.action-bar.right {
+  width: 100%;
+}
+
+/* PRINT AREA */
+.print-area {
+  display: none;
+}
+
+/* PRINT MODE */
+@media print {
+  body * {
+    visibility: hidden;
+  }
+
+  .print-area,
+  .print-area * {
+    visibility: visible;
+  }
+
+  .print-area {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .print-area h2 {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  .print-area table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+
+  .print-area th,
+  .print-area td {
+    border: 1px solid #000;
+    padding: 8px;
+    text-align: left;
+  }
+}
+
+/* BUTTON */
+.btn-print.active {
+  background: #3b82f6;
+  color: white;
+}
