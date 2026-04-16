@@ -1,0 +1,7 @@
+SECRET_KEY=django-insecure-62t7@+yj_$*xpdiu(8)%ya%l&i+hx=5!40v@5%i8ix5p3a%wg&
+DEBUG=True
+DB_NAME=postgres
+DB_USER=postgres
+DB_PASSWORD=bRfoUtBcyFS81aYP
+DB_HOST=db.ryfnvivsqyirikdtsdxx.supabase.co
+DB_PORT=5432
