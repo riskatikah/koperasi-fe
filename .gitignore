@@ -1,0 +1,39 @@
+# ======================
+# ENV FILES
+# ======================
+backend/.env
+frontend/.env*
+*.env.example
+
+# ======================
+# PYTHON / DJANGO
+# ======================
+backend/venv/
+**/__pycache__/
+*.pyc
+
+# ======================
+# NODE / FRONTEND
+# ======================
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+
+# ======================
+# LOGS
+# ======================
+*.log
+logs/
+
+# ======================
+# OS / EDITOR
+# ======================
+.vscode/
+!.vscode/extensions.json
+.idea/
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

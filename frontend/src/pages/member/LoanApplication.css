@@ -1,0 +1,297 @@
+/* LoanApplication.css */
+
+.la-page {
+  animation: fadeUp 0.35s ease forwards;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.la-header {
+  margin-bottom: 24px;
+}
+
+.la-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid #E2E8F0;
+  padding: 6px 14px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0A1628;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.2s;
+  margin-bottom: 16px;
+}
+
+.la-back-btn:hover {
+  background: #F1F5F9;
+}
+
+.la-header h1 {
+  font-family: var(--font-h, 'Syne', sans-serif);
+  font-size: 24px;
+  font-weight: 800;
+  color: #0A1628;
+  margin: 0 0 4px 0;
+}
+
+.la-header p {
+  font-size: 13.5px;
+  color: #7A90B0;
+  margin: 0;
+}
+
+.la-limit-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 32px;
+}
+
+.la-icon-box {
+  width: 32px;
+  height: 32px;
+  background: #E2E8F0;
+  color: #64748B;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.la-limit-text {
+  font-size: 13.5px;
+  color: #64748B;
+}
+
+.la-limit-text strong {
+  color: #0A1628;
+  margin-right: 4px;
+}
+
+.la-content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: stretch;
+}
+
+.la-form {
+  background: #fff;
+  border: 1px solid #E2E8F0;
+  border-radius: 16px;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+}
+
+.la-form-group {
+  margin-bottom: 20px;
+}
+
+.la-form-group label {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  color: #94A3B8;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.la-form-group select,
+.la-form-group input[type="text"] {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1px solid #CBD5E1;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0A1628;
+  font-family: inherit;
+  transition: all 0.2s;
+  background: #fff;
+}
+
+.la-form-group select:focus,
+.la-form-group input[type="text"]:focus {
+  border-color: #2D6BE4;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(45, 107, 228, 0.1);
+}
+
+.la-upload-box {
+  width: 100%;
+  padding: 24px;
+  border: 1px dashed #CBD5E1;
+  border-radius: 8px;
+  background: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #64748B;
+  font-size: 13.5px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.la-upload-box:hover {
+  border-color: #94A3B8;
+  background: #F1F5F9;
+}
+
+.la-upload-box .u-icon {
+  color: #94A3B8;
+}
+
+.la-btn-continue {
+  width: 100%;
+  background: #0A1628;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  margin-top: auto;
+}
+
+.la-btn-continue:hover {
+  background: #0F2040;
+}
+
+/* Simulation Card */
+.la-simulation-card {
+  background: #0F172A;
+  border-radius: 16px;
+  padding: 32px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.fade-in {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.98); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.la-simulation-card h2 {
+  font-family: var(--font-h, 'Syne', sans-serif);
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 6px 0;
+}
+
+.la-sim-sub {
+  font-size: 12px;
+  color: #94A3B8;
+  margin: 0 0 16px 0;
+}
+
+.la-sim-amount {
+  font-family: var(--font-h, 'Syne', sans-serif);
+  font-size: 36px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.02em;
+}
+
+.la-sim-desc {
+  font-size: 12px;
+  color: #94A3B8;
+  margin: 0 0 24px 0;
+}
+
+.la-sim-details {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 16px;
+  margin-bottom: 24px;
+}
+
+.la-sim-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  font-size: 13.5px;
+  color: #CBD5E1;
+}
+
+.la-sim-row.total {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-weight: 700;
+  color: #fff;
+  margin-top: 4px;
+}
+
+.la-sim-disclaimer {
+  font-size: 11px;
+  color: #64748B;
+  line-height: 1.5;
+  margin: 0 0 24px 0;
+}
+
+.la-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 12px;
+  color: #CBD5E1;
+  line-height: 1.5;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.la-checkbox input {
+  margin-top: 2px;
+  cursor: pointer;
+}
+
+.la-btn-submit {
+  width: 100%;
+  background: #059669;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  margin-top: auto;
+}
+
+.la-btn-submit:not(:disabled):hover {
+  background: #047857;
+}
+
+.la-btn-submit:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+@media (max-width: 900px) {
+  .la-content-grid {
+    grid-template-columns: 1fr;
+  }
+}

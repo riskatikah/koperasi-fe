@@ -1,0 +1,146 @@
+.ad-detail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.add-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  border-bottom: 2px solid #E2E8F0;
+  padding-bottom: 20px;
+}
+
+.add-tabs {
+  display: flex;
+  gap: 12px;
+}
+
+.add-tab-btn {
+  padding: 8px 24px;
+  border-radius: 99px;
+  border: none;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-tab-btn.active {
+  background: #64748B;
+  color: #fff;
+}
+
+.add-tab-btn:not(.active) {
+  background: #CBD5E1;
+  color: #fff;
+}
+
+.add-title {
+  font-family: var(--font-h, 'Syne', sans-serif);
+  font-size: 28px;
+  font-weight: 800;
+  color: #0A1628;
+  margin: 0;
+}
+
+.add-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+  margin-bottom: 40px;
+}
+
+.add-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.add-form-group .lbl {
+  font-size: 12px;
+  font-weight: 600;
+  color: #64748B;
+}
+
+.add-input {
+  width: 100%;
+  padding: 14px 16px;
+  background: #CBD5E1; /* solid grey like mockup */
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #0A1628;
+  font-family: inherit;
+  outline: none;
+  opacity: 0.6;
+}
+
+select.add-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%233D5270' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 16px;
+}
+
+.add-input-group {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #CBD5E1;
+  opacity: 0.6;
+}
+
+.add-input-group .add-input-prefix {
+  padding: 14px 16px;
+  background: #E2E8F0;
+  font-size: 14px;
+  color: #64748B;
+  font-weight: 600;
+  border-right: 1px solid #CBD5E1;
+}
+
+.add-input-group .add-input {
+  opacity: 1; /* reset opacity since parent handles it */
+  border-radius: 0;
+  background: transparent;
+}
+
+.add-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.add-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 16px;
+}
+
+.btn-add {
+  padding: 12px 32px;
+  border-radius: 8px;
+  border: none;
+  font-size: 13.5px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+  color: #fff;
+}
+
+.btn-add:hover { opacity: 0.9; }
+
+.btn-add.edit { background: #64748B; }
+.btn-add.back { background: #64748B; }
+.btn-add.save { background: #64748B; }
+.btn-add.reject { background: #64748B; }
+.btn-add.approve { background: #64748B; }
+
+@media (max-width: 800px) {
+  .add-form {
+    grid-template-columns: 1fr;
+  }
+}
